@@ -19,6 +19,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu-Bold.woff") format("woff"), url("../fonts/Ubuntu-Bold.woff2") format("woff2"), url("../fonts/Ubuntu-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 .root {
   font-family: 'Ubuntu', sans-serif;
 }
@@ -59,16 +66,35 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 0 auto;
   padding-top: 15px;
 }
 
+@media screen and (max-width: 1023px) {
+  .app__container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 .data {
   text-align: center;
-  width: 58%;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .data {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .data {
+    padding: 0 5px;
+  }
 }
 
 .data__subtitle {
@@ -111,17 +137,41 @@
   opacity: .4;
 }
 
+@media screen and (max-width: 524px) {
+  .data__input-field {
+    width: 90%;
+  }
+}
+
 .data__input-field_columns_3 {
   width: calc((100%/3) - 4px);
+}
+
+@media screen and (max-width: 524px) {
+  .data__input-field_columns_3 {
+    width: 90%;
+  }
 }
 
 .data__input-field_columns_2 {
   width: 30%;
 }
 
+@media screen and (max-width: 524px) {
+  .data__input-field_columns_2 {
+    width: 40%;
+  }
+}
+
 .data__input-field_columns_1 {
   width: 80%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 524px) {
+  .data__input-field_columns_1 {
+    width: 90%;
+  }
 }
 
 .data__input-field:hover {
@@ -216,7 +266,28 @@
 }
 
 .result {
-  width: 40%;
+  width: 60%;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 1023px) {
+  .result {
+    width: 55%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .result {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .result {
+    width: 100%;
+    padding: 0 5px;
+  }
 }
 
 .result__table {
@@ -233,12 +304,25 @@
   width: 100%;
   min-height: 400px;
   margin: 56px 0 0;
-  padding: 25px;
+  padding: 25px 20px;
   background-color: #fff;
   -webkit-box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 524px) {
+  .result__table {
+    margin-top: 46px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .result__table {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
 }
 
 .result__field-title {
@@ -252,6 +336,12 @@
 
 .result__field-title:first-of-type {
   margin-top: 0;
+}
+
+@media screen and (max-width: 424px) {
+  .result__field-title {
+    padding: 5px;
+  }
 }
 
 .result__value {
@@ -269,26 +359,64 @@
   margin-top: 0;
 }
 
+@media screen and (max-width: 424px) {
+  .result__value {
+    padding: 5px;
+  }
+}
+
 .time-data {
   width: 100%;
-  margin: 0 auto;
+  margin: 41px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-top: 58px;
+}
+
+@media screen and (max-width: 1023px) {
+  .time-data {
+    margin: 20px 0 50px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .time-data {
+    margin: 20px 0 40px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .time-data {
+    width: 212px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin: 20px auto 35px;
+  }
 }
 
 .time-data__label {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 8px 5px 0 25px;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 20px 0 0 20px;
 }
 
 .time-data__label:first-of-type {
   margin-left: 0;
+}
+
+@media screen and (max-width: 424px) {
+  .time-data__label {
+    padding-right: 60px;
+  }
 }
 
 .time-data__value {
@@ -307,6 +435,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 80px;
+  height: 30px;
   margin-bottom: 0;
   cursor: default;
 }
