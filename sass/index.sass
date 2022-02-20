@@ -1,7 +1,6 @@
 @import '_fonts'
 @import 'variables'
-*
-  box-sizing: border-box
+
 .root
   font-family: 'Ubuntu', sans-serif
 .app
@@ -12,11 +11,13 @@
     height: 50px
     line-height: 50px
     font-size: 17px
+    font-weight: 400
     background-color: #fff
     box-shadow: 0px 1.5px 10px 0 rgba(1, 0, 42, .05)
     text-align: center
     &_color_active
       color: $active
+      font-weight: 500
   &__title
     width: 100%
     margin: 30px 0 0
@@ -47,7 +48,6 @@
     &_columns_2
       width: 30%
     &_columns_1
-      display: block
       width: 80%
       margin: 0 auto
   &__btn
@@ -60,11 +60,38 @@
       margin-top: 25px
       font-size: 17px
       font-weight: 500
-  &__checksavings
-    width: 30px
+  &__label
+    display: block
+    margin: 25px 0 15px
+    font-weight: 500
+    font-size: 14px
+    color: $text-color
+  &__checkbox
+    position: absolute
+    z-index: -1
+    opacity: 0
+  &__checkbox + &__label::after
+    content: ''
+    display: inline-block
+    width: 16px
+    height: 16px
+    border: none
+    border-radius: 2.5px
+    margin-left: 6px
+    background-color: #fff
+    box-shadow: 0px 0px 5px 0 rgba(1, 0, 42, .15)
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 75% 75%
+    transform: translateY(4px)
+  &__checkbox:checked + &__label::after
+    background-color: #ff964b
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
+
 .result
   width: 40%
   &__table
+    box-sizing: border-box
     display: flex
     flex-wrap: wrap
     justify-content: space-between
@@ -77,6 +104,7 @@
     font-size: 16px
     font-weight: 500
   &__field-title
+    box-sizing: border-box
     width: 56%
     margin: 10px 0 0
     min-height: 40px
@@ -84,6 +112,7 @@
     &:first-of-type
       margin-top: 0
   &__value
+    box-sizing: border-box
     color: $result
     word-break: break-word
     width: 40%
@@ -97,7 +126,7 @@
   margin: 0 auto
   display: flex
   justify-content: flex-end
-  margin-top: 54px
+  margin-top: 58px
   &__label
     font-size: 16px
     font-weight: 500
@@ -108,3 +137,4 @@
     @include input-field
     width: 80px
     margin-bottom: 0
+    cursor: default

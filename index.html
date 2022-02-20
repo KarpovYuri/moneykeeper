@@ -8,7 +8,7 @@
   <meta name="author" content="Карпов Юрий">
   <link rel="stylesheet" href="vendor/normalize.css">
   <link rel="stylesheet" href="css/index.css">
-  <title>Программа для расчета финансов</title>
+  <title>MoneyKeeper</title>
 </head>
 
 <body class="root">
@@ -22,13 +22,13 @@
         <input class="data__input-field" type="text" id="price_1" placeholder="Цена">
         <input class="data__input-field" type="text" id="name_2" placeholder="Наименование">
         <input class="data__input-field" type="text" id="price_2" placeholder="Цена">
-        <button class="data__btn">Утвердить</button>
+        <button type="button" class="data__btn">Утвердить</button>
 
         <h2 class="data__subtitle">Введите необязательные расходы</h2>
         <input class="data__input-field data__input-field_columns_3" type="text" id="optionalexpenses_1">
         <input class="data__input-field data__input-field_columns_3" type="text" id="optionalexpenses_2">
         <input class="data__input-field data__input-field_columns_3" type="text" id="optionalexpenses_3">
-        <button class="data__btn">Утвердить</button>
+        <button type="button" class="data__btn">Утвердить</button>
 
         <h2 class="data__subtitle">Расчет дневного бюджета</h2>
         <button class="data__btn data__btn_width_120">Рассчитать</button>
@@ -36,14 +36,13 @@
         <h2 class="data__subtitle">Введите статьи возможного дохода через запятую</h2>
         <input class="data__input-field data__input-field_columns_1" type="text" id="income">
 
-        <div class="data__subtitle">Есть ли накопления:
-          <input class="data__checksavings" id="savings" type="checkbox" />
-        </div>
+        <input class="data__checkbox" id="savings" type="checkbox" />
+        <label class="data__label" for="savings">Есть ли накопления:</label>
 
         <input class="data__input-field data__input-field_columns_2" id="sum" type="text" placeholder="Сумма">
         <input class="data__input-field data__input-field_columns_2" id="percent" type="text" placeholder="Процент">
 
-        <button class="data__btn data__btn_width_200" id="start">Начать расчет</button>
+        <button type="button" class="data__btn data__btn_width_200" id="start">Начать расчет</button>
       </div>
 
       <div class="result">
