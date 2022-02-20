@@ -1,0 +1,232 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu-Light.woff") format("woff"), url("../fonts/Ubuntu-Light.woff2") format("woff2"), url("../fonts/Ubuntu-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu-Regular.woff") format("woff"), url("../fonts/Ubuntu-Regular.woff2") format("woff2"), url("../fonts/Ubuntu-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu-Medium.woff") format("woff"), url("../fonts/Ubuntu-Medium.woff2") format("woff2"), url("../fonts/Ubuntu-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.root {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.app {
+  background-color: #faf8f5;
+  min-height: 820px;
+}
+
+.app__logo {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 17px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 1.5px 10px 0 rgba(1, 0, 42, 0.05);
+          box-shadow: 0px 1.5px 10px 0 rgba(1, 0, 42, 0.05);
+  text-align: center;
+}
+
+.app__logo_color_active {
+  color: #ff6a30;
+}
+
+.app__title {
+  width: 100%;
+  margin: 30px 0 0;
+  font-weight: 500;
+  font-size: 20px;
+  color: #262626;
+  text-align: center;
+}
+
+.app__container {
+  max-width: 1140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.app__data {
+  text-align: center;
+}
+
+.app__subtitle {
+  margin: 25px 0 15px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #262626;
+}
+
+.app__input-field {
+  height: 35px;
+  width: calc((100%/2) - 4px);
+  border-radius: 2.5px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  border: none;
+  padding: 0 0 0 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #a7a7a7;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.app__input-field::-webkit-input-placeholder {
+  opacity: .4;
+}
+
+.app__input-field:-ms-input-placeholder {
+  opacity: .4;
+}
+
+.app__input-field::-ms-input-placeholder {
+  opacity: .4;
+}
+
+.app__input-field::placeholder {
+  opacity: .4;
+}
+
+.app__input-field_columns_3 {
+  width: calc((100%/3) - 4px);
+}
+
+.app__input-field_columns_2 {
+  width: 30%;
+  display: inline-block;
+}
+
+.app__input-field_columns_1 {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.app__btn {
+  width: 90px;
+  height: 30px;
+  display: block;
+  margin: 5px auto;
+  padding: 0;
+  border: none;
+  border-radius: 2.5px;
+  background-image: linear-gradient(336deg, #ffbd75, #ff964b), linear-gradient(#fff, #fff);
+  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  color: #fff;
+  font-weight: 300;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.app__btn_width_120 {
+  width: 120px;
+}
+
+.app__btn_width_200 {
+  width: 200px;
+  height: 40px;
+  margin-top: 25px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.app__checksavings {
+  width: 30px;
+}
+
+.result {
+  width: 50%;
+}
+
+.result-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  min-height: 400px;
+  margin: 0 auto;
+  margin-top: 42px;
+  padding: 25px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
+          box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
+}
+
+.result-table .budget, .result-table .budget-value, .result-table .daybudget, .result-table .daybudget-value, .result-table .level, .result-table .level-value, .result-table .expenses, .result-table .expenses-value, .result-table .optionalexpenses, .result-table .optionalexpenses-value, .result-table .income, .result-table .income-value, .result-table .monthsavings, .result-table .monthsavings-value, .result-table .yearsavings, .result-table .yearsavings-value {
+  width: 48%;
+  margin-top: 10px;
+  min-height: 40px;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.result-table .budget-value, .result-table .daybudget-value, .result-table .level-value, .result-table .expenses-value, .result-table .optionalexpenses-value, .result-table .income-value, .result-table .monthsavings-value, .result-table .yearsavings-value {
+  color: #61a654;
+  word-break: break-word;
+}
+
+.result .time-data {
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 40px;
+}
+
+.result .time-data .year, .result .time-data .month, .result .time-data .day {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.result .time-data .year-value, .result .time-data .month-value, .result .time-data .day-value {
+  height: 35px;
+  width: calc((100%/2) - 4px);
+  border-radius: 2.5px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  border: none;
+  padding: 0 0 0 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #a7a7a7;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 80px;
+  height: 30px;
+  margin-left: 25px;
+}
+/*# sourceMappingURL=index.css.map */
