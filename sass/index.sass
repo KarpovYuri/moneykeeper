@@ -27,10 +27,12 @@
   &__container
     max-width: 1140px
     display: flex
+    justify-content: space-between
     margin: 0 auto
     padding-top: 15px
-  &__data
-    text-align: center
+.data
+  text-align: center
+  width: 58%
   &__subtitle
     margin: 25px 0 15px
     font-weight: 500
@@ -44,7 +46,6 @@
       width: calc((100%/3) - 4px)
     &_columns_2
       width: 30%
-      display: inline-block
     &_columns_1
       display: block
       width: 80%
@@ -55,45 +56,55 @@
       width: 120px
     &_width_200
       width: 200px
-      height: 40px
+      height: 45px
       margin-top: 25px
       font-size: 17px
-      font-weight: 400
+      font-weight: 500
   &__checksavings
     width: 30px
 .result
-  width: 50%
-  &-table
+  width: 40%
+  &__table
     display: flex
     flex-wrap: wrap
     justify-content: space-between
-    width: 90%
+    width: 100%
     min-height: 400px
-    margin: 0 auto
-    margin-top: 42px
+    margin: 56px 0 0
     padding: 25px
     background-color: #fff
     box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1)
-    .budget, .budget-value, .daybudget, .daybudget-value, .level, .level-value, .expenses, .expenses-value, .optionalexpenses, .optionalexpenses-value, .income, .income-value, .monthsavings, .monthsavings-value, .yearsavings, .yearsavings-value
-      width: 48%
-      margin-top: 10px
-      min-height: 40px
-      padding: 10px
-      font-weight: 500
-    .budget-value, .daybudget-value, .level-value, .expenses-value, .optionalexpenses-value, .income-value, .monthsavings-value, .yearsavings-value
-      color: $result
-      word-break: break-word
-  .time-data
-    width: 100%
-    margin: 0 auto
-    display: flex
-    justify-content: space-around
-    margin-top: 40px
-    .year, .month, .day
-      font-size: 16px
-      font-weight: 500
-    .year-value, .month-value, .day-value
-      @include input-field
-      width: 80px
-      height: 30px
-      margin-left: 25px
+    font-size: 16px
+    font-weight: 500
+  &__field-title
+    width: 56%
+    margin: 10px 0 0
+    min-height: 40px
+    padding: 10px
+    &:first-of-type
+      margin-top: 0
+  &__value
+    color: $result
+    word-break: break-word
+    width: 40%
+    margin: 10px 0 0
+    min-height: 40px
+    padding: 10px
+    &:nth-of-type(2)
+      margin-top: 0
+.time-data
+  width: 100%
+  margin: 0 auto
+  display: flex
+  justify-content: flex-end
+  margin-top: 54px
+  &__label
+    font-size: 16px
+    font-weight: 500
+    margin: 8px 5px 0 25px
+    &:first-of-type
+      margin-left: 0
+  &__value
+    @include input-field
+    width: 80px
+    margin-bottom: 0

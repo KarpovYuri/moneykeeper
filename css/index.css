@@ -62,22 +62,26 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 0 auto;
   padding-top: 15px;
 }
 
-.app__data {
+.data {
   text-align: center;
+  width: 58%;
 }
 
-.app__subtitle {
+.data__subtitle {
   margin: 25px 0 15px;
   font-weight: 500;
   font-size: 14px;
   color: #262626;
 }
 
-.app__input-field {
+.data__input-field {
   height: 35px;
   width: calc((100%/2) - 4px);
   border-radius: 2.5px;
@@ -94,38 +98,37 @@
           box-sizing: border-box;
 }
 
-.app__input-field::-webkit-input-placeholder {
+.data__input-field::-webkit-input-placeholder {
   opacity: .4;
 }
 
-.app__input-field:-ms-input-placeholder {
+.data__input-field:-ms-input-placeholder {
   opacity: .4;
 }
 
-.app__input-field::-ms-input-placeholder {
+.data__input-field::-ms-input-placeholder {
   opacity: .4;
 }
 
-.app__input-field::placeholder {
+.data__input-field::placeholder {
   opacity: .4;
 }
 
-.app__input-field_columns_3 {
+.data__input-field_columns_3 {
   width: calc((100%/3) - 4px);
 }
 
-.app__input-field_columns_2 {
+.data__input-field_columns_2 {
   width: 30%;
-  display: inline-block;
 }
 
-.app__input-field_columns_1 {
+.data__input-field_columns_1 {
   display: block;
   width: 80%;
   margin: 0 auto;
 }
 
-.app__btn {
+.data__btn {
   width: 90px;
   height: 30px;
   display: block;
@@ -142,27 +145,27 @@
   cursor: pointer;
 }
 
-.app__btn_width_120 {
+.data__btn_width_120 {
   width: 120px;
 }
 
-.app__btn_width_200 {
+.data__btn_width_200 {
   width: 200px;
-  height: 40px;
+  height: 45px;
   margin-top: 25px;
   font-size: 17px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
-.app__checksavings {
+.data__checksavings {
   width: 30px;
 }
 
 .result {
-  width: 50%;
+  width: 40%;
 }
 
-.result-table {
+.result__table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -171,46 +174,64 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 90%;
+  width: 100%;
   min-height: 400px;
-  margin: 0 auto;
-  margin-top: 42px;
+  margin: 56px 0 0;
   padding: 25px;
   background-color: #fff;
   -webkit-box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
           box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
-}
-
-.result-table .budget, .result-table .budget-value, .result-table .daybudget, .result-table .daybudget-value, .result-table .level, .result-table .level-value, .result-table .expenses, .result-table .expenses-value, .result-table .optionalexpenses, .result-table .optionalexpenses-value, .result-table .income, .result-table .income-value, .result-table .monthsavings, .result-table .monthsavings-value, .result-table .yearsavings, .result-table .yearsavings-value {
-  width: 48%;
-  margin-top: 10px;
-  min-height: 40px;
-  padding: 10px;
+  font-size: 16px;
   font-weight: 500;
 }
 
-.result-table .budget-value, .result-table .daybudget-value, .result-table .level-value, .result-table .expenses-value, .result-table .optionalexpenses-value, .result-table .income-value, .result-table .monthsavings-value, .result-table .yearsavings-value {
-  color: #61a654;
-  word-break: break-word;
+.result__field-title {
+  width: 56%;
+  margin: 10px 0 0;
+  min-height: 40px;
+  padding: 10px;
 }
 
-.result .time-data {
+.result__field-title:first-of-type {
+  margin-top: 0;
+}
+
+.result__value {
+  color: #61a654;
+  word-break: break-word;
+  width: 40%;
+  margin: 10px 0 0;
+  min-height: 40px;
+  padding: 10px;
+}
+
+.result__value:nth-of-type(2) {
+  margin-top: 0;
+}
+
+.time-data {
   width: 100%;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  margin-top: 40px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 54px;
 }
 
-.result .time-data .year, .result .time-data .month, .result .time-data .day {
+.time-data__label {
   font-size: 16px;
   font-weight: 500;
+  margin: 8px 5px 0 25px;
 }
 
-.result .time-data .year-value, .result .time-data .month-value, .result .time-data .day-value {
+.time-data__label:first-of-type {
+  margin-left: 0;
+}
+
+.time-data__value {
   height: 35px;
   width: calc((100%/2) - 4px);
   border-radius: 2.5px;
@@ -226,7 +247,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 80px;
-  height: 30px;
-  margin-left: 25px;
+  margin-bottom: 0;
 }
 /*# sourceMappingURL=index.css.map */
