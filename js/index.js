@@ -1,5 +1,31 @@
-let money;
-let time;
+const startBtn = document.querySelector('#start');
+const budget = document.querySelector('#budget');
+const dayBudget = document.querySelector('#daybudget');
+const level = document.querySelector('#level');
+const expenses = document.querySelector('#expenses');
+const additionalExpenses = document.querySelector('#additionalexpenses');
+const income = document.querySelector('#income');
+const monthSavings = document.querySelector('#monthsavings');
+const yearSavings = document.querySelector('#yearsavings');
+
+const expensesItems = document.querySelectorAll('.expenses-item');
+const additionalExpensesItems = document.querySelectorAll('.additional-item');
+const expensesBtn = document.querySelectorAll('.data__btn')[0];
+const additionalExpensesBtn = document.querySelectorAll('.data__btn')[1];
+const countBtn = document.querySelectorAll('.data__btn')[2];
+const incomeItem = document.querySelector('#choose-income');
+const checkSavings = document.querySelector('#savings');
+const sumValue = document.querySelector('#sum');
+const percentValue = document.querySelector('#percent');
+const year = document.querySelector('#year');
+const month = document.querySelector('#month');
+const day = document.querySelector('#day');
+
+let money, time;
+
+expensesBtn.disabled = true;
+additionalExpensesBtn.disabled = true;
+countBtn.disabled = true;
 
 let appData = {
   budget: money,
