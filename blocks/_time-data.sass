@@ -1,0 +1,29 @@
+.time-data
+  width: 100%
+  margin: 41px 0 0
+  display: flex
+  justify-content: flex-end
+  @media screen and (max-width: 1023px)
+    margin: 20px 0 50px
+    justify-content: center
+  @media screen and (max-width: 767px)
+    margin: 20px 0 40px
+  @media screen and (max-width: 424px)
+    width: 212px
+    flex-wrap: wrap
+    justify-content: flex-end
+    margin: 20px auto 35px
+  &__label
+    font-size: 14px
+    font-weight: 700
+    margin: 20px 0 0 20px
+    &:first-of-type
+      margin-left: 0
+    @media screen and (max-width: 424px)
+      padding-right: 60px
+  &__value
+    @include input-field
+    width: 80px
+    height: 30px
+    margin-bottom: 0
+    cursor: default

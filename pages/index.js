@@ -1,4 +1,8 @@
+// Объявление переменных
 let money, time;
+
+
+// Объявление объекта с данными
 let appData = {
   budget: money,
   expenses: {},
@@ -10,7 +14,6 @@ let appData = {
 
 
 // Выбор кнопок
-
 const startBtn = document.querySelector('#start');
 const expensesBtn = document.querySelectorAll('.data__btn')[0];
 const additionalExpensesBtn = document.querySelectorAll('.data__btn')[1];
@@ -18,7 +21,6 @@ const countBtn = document.querySelectorAll('.data__btn')[2];
 
 
 // Выбор полей результатов
-
 const budget = document.querySelector('#budget');
 const dayBudget = document.querySelector('#daybudget');
 const level = document.querySelector('#level');
@@ -45,14 +47,12 @@ const percentValue = document.querySelector('#percent');
 
 
 // Переключение кнопок в состояние disabled
-
 expensesBtn.disabled = true;
 additionalExpensesBtn.disabled = true;
 countBtn.disabled = true;
 
 
 // Обработчик событий кнопки 'Начать расчет'
-
 startBtn.addEventListener('click', () => {
   time = prompt('Введите дату в формате YYYY-MM-DD', '');
   money = +prompt("Ваш бюджет на месяц?", '');
@@ -74,7 +74,6 @@ startBtn.addEventListener('click', () => {
 
 
 // Обработчик событий кнопки 'Утвердить' обязательные расходы
-
 expensesBtn.addEventListener('click', () => {
   let sum = 0;
   for (let i = 0; i < expensesItems.length; i++) {
@@ -93,7 +92,6 @@ expensesBtn.addEventListener('click', () => {
 
 
 // Обработчик событий кнопки 'Утвердить' необязательные расходы
-
 additionalExpensesBtn.addEventListener('click', () => {
   for (let i = 0; i < additionalExpensesItems.length; i++) {
     let opt = additionalExpensesItems[i].value;
@@ -104,7 +102,6 @@ additionalExpensesBtn.addEventListener('click', () => {
 
 
 // Обработчик событий кнопки 'Рассчитать' дневной бюджет
-
 countBtn.addEventListener('click', () => {
   if (appData.budget != undefined) {
     appData.moneyPerDay = ((appData.budget - +expenses.textContent) / 30).toFixed();
@@ -125,7 +122,6 @@ countBtn.addEventListener('click', () => {
 
 
 // Обработчик событий поля возможного дохода
-
 incomeItem.addEventListener('input', () => {
   let items = incomeItem.value;
   if (isNaN(items) || items != '') {
@@ -136,7 +132,6 @@ incomeItem.addEventListener('input', () => {
 
 
 // Обработчик событий чекбокса
-
 checkSavings.addEventListener("click", () => {
   if (appData.savings == true) {
     appData.savings = false;
@@ -147,7 +142,6 @@ checkSavings.addEventListener("click", () => {
 
 
 // Обработчик событий поля 'Сумма' накоплений
-
 sumValue.addEventListener('input', () => {
   if (appData.savings == true) {
     let sum = +sumValue.value;
@@ -161,7 +155,6 @@ sumValue.addEventListener('input', () => {
 
 
 // Обработчик событий поля 'Процент' накоплений
-
 percentValue.addEventListener('input', () => {
   if (appData.savings == true) {
     let sum = +sumValue.value;
