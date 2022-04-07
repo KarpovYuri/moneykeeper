@@ -197,6 +197,7 @@
   font-weight: 300;
   font-size: 12px;
   cursor: pointer;
+  outline: none;
 }
 
 .data__btn_width_120 {
@@ -564,6 +565,7 @@
   font-weight: 300;
   font-size: 12px;
   cursor: pointer;
+  outline: none;
   width: 358px;
   height: 50px;
   font-size: 18px;
