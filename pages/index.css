@@ -201,6 +201,14 @@
   outline: none;
 }
 
+.data__field_inactive {
+  opacity: .4;
+}
+
+.data__field_inactive:hover {
+  outline: none;
+}
+
 .data__input-error {
   color: #ff6a30;
   font-size: 11px;

@@ -112,7 +112,7 @@ countBtn.addEventListener('click', () => {
     dayBudget.textContent = appData.moneyPerDay;
     if (appData.moneyPerDay < 100) {
       level.textContent = 'Минимальный уровень достатка';
-    } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+    } else if (appData.moneyPerDay >= 100 && appData.moneyPerDay <= 2000) {
       level.textContent = 'Средний уровень достатка';
     } else if (appData.moneyPerDay > 2000) {
       level.textContent = 'Высокий уровень достатка';
@@ -130,6 +130,7 @@ incomeItem.addEventListener('input', () => {
   let items = incomeItem.value;
   if (isNaN(items) || items != '') {
     appData.income = items.split(',');
+    console.log(appData.income);
     income.textContent = appData.income;
   }
 });
@@ -139,8 +140,16 @@ incomeItem.addEventListener('input', () => {
 checkSavings.addEventListener("click", () => {
   if (appData.savings == true) {
     appData.savings = false;
+    sumValue.classList.add('data__field_inactive');
+    sumValue.disabled = true;
+    percentValue.classList.add('data__field_inactive');
+    percentValue.disabled = true;
   } else {
     appData.savings = true;
+    sumValue.classList.remove('data__field_inactive');
+    sumValue.disabled = false;
+    percentValue.classList.remove('data__field_inactive');
+    percentValue.disabled = false;
   }
 });
 
