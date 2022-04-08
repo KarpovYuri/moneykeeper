@@ -1,3 +1,17 @@
+// Объект классов необходимый для запуса валидации
+export const formClasses = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__field',
+  submitButtonSelector: '.popup__submit-button',
+  inactiveButtonClass: 'popup__submit-button_inactive',
+  inputErrorClass: 'popup__field_type_error',
+  errorClass: 'popup__input-error_active',
+};
+
+
+// Объект экземпляров класса FormValidator
+export const formValidators = {};
+
 
 // Выбор кнопок
 const startBtn = document.querySelector('#start');

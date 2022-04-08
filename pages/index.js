@@ -1,3 +1,5 @@
+// Импорт классов
+import FormValidator from "../js/components/FormValidator.js";
 import PopupWithForm from "../js/components/PopupWithForm.js";
 
 
@@ -18,6 +20,8 @@ const appData = {
 
 // Импорт переменных
 import {
+  formClasses,
+  formValidators,
   startBtn,
   expensesBtn,
   additionalExpensesBtn,
@@ -75,6 +79,7 @@ popup.setEventListeners();
 
 // Обработчик событий кнопки 'Начать расчет'
 startBtn.addEventListener('click', () => {
+  formValidators.dataForm.resetValidation();
   popup.openPopup();
 });
 
@@ -171,3 +176,19 @@ percentValue.addEventListener('input', () => {
     yearSavings.textContent = appData.yearIncome.toFixed(1);
   }
 });
+
+
+// Функция запуска валидации
+function enableValidation(formClasses) {
+  const formList = Array.from(document.querySelectorAll(formClasses.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(formClasses, formElement);
+    const formName = formElement.getAttribute('name');
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  });
+}
+
+
+// Включение валидации
+enableValidation(formClasses);

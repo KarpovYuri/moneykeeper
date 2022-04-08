@@ -95,9 +95,9 @@
   <article class="popup" id="popup-data">
     <div class="popup__container">
       <h2 class="popup__title">Ввод начальных данных</h2>
-      <form class="popup__form" name="dataForm">
-        <input type="text" placeholder="Дата в формате YYYY-MM-DD" class="popup__field" id="date" name="date" required
-          pattern="\d{4}-\d{2}-\d{2}">
+      <form class="popup__form" name="dataForm" novalidate>
+        <input type="text" placeholder="Дата в формате YYYY-MM-DD" class="popup__field" id="dateInput" name="date"
+          required pattern="\d{4}-\d{2}-\d{2}">
         <span class="popup__input-error dateInput-error"></span>
         <input type="number" placeholder="Бюджет на месяц?" class="popup__field" id="budgetInput" name="budget" required
           min="1000" max="100000" step="500">
