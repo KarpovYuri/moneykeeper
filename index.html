@@ -17,6 +17,7 @@
     <h1 class="app__title">Расчет дневного бюджета</h1>
     <div class="app__container">
       <div class="data">
+
         <h2 class="data__subtitle">Введите обязательные расходы</h2>
         <form class="data__form" name="expensesForm" novalidate>
           <div class="data__input-wrapper">
@@ -43,18 +44,38 @@
             <span class="data__input-error priceTwoInput-error"></span>
           </div>
 
-          <button type="submit" aria-label="Кнопка сохранения формы" class="data__submit-button">Утвердить</button>
+          <button type="submit" aria-label="Кнопка сохранения формы"
+            class="data__submit-button data__submit-button_inactive" disabled>Утвердить</button>
 
         </form>
 
         <h2 class="data__subtitle">Введите необязательные расходы</h2>
-        <input class="data__field data__field_columns_3 additional-item" type="text" id="optionalexpenses_1">
-        <input class="data__field data__field_columns_3 additional-item" type="text" id="optionalexpenses_2">
-        <input class="data__field data__field_columns_3 additional-item" type="text" id="optionalexpenses_3">
-        <button type="button" class="data__submit-button">Утвердить</button>
+        <form class="data__form" name="optionalExpensesForm" novalidate>
+          <div class="data__input-wrapper data__input-wrapper_columns_3">
+            <input class="data__field additional-item" type="text" id="optionalExpensesOneInput"
+              name="optionalExpensesOne" placeholder="Наименование" required minlength="2" maxlength="20"
+              autocomplete="off">
+            <span class="data__input-error data__input-error_columns_3 optionalExpensesOneInput-error"></span>
+          </div>
+          <div class="data__input-wrapper data__input-wrapper_columns_3">
+            <input class="data__field additional-item" type="text" id="optionalExpensesTwoInput"
+              name="optionalExpensesTwo" placeholder="Наименование" required minlength="2" maxlength="20"
+              autocomplete="off">
+            <span class="data__input-error data__input-error_columns_3 optionalExpensesTwoInput-error"></span>
+          </div>
+          <div class="data__input-wrapper data__input-wrapper_columns_3">
+            <input class="data__field additional-item" type="text" id="optionalExpensesThreeInput"
+              name="optionalExpensesThree" placeholder="Наименование" required minlength="2" maxlength="20"
+              autocomplete="off">
+            <span class="data__input-error data__input-error_columns_3 optionalExpensesThreeInput-error"></span>
+          </div>
+          <button type="submit" aria-label="Кнопка сохранения формы"
+            class="data__submit-button data__submit-button_inactive" disabled>Утвердить</button>
+        </form>
 
         <h2 class="data__subtitle">Расчет дневного бюджета</h2>
-        <button class="data__submit-button data__submit-button_width_120">Рассчитать</button>
+        <button class="data__submit-button data__submit-button_width_120 data__submit-button_inactive"
+          disabled>Рассчитать</button>
 
         <h2 class="data__subtitle">Введите статьи возможного дохода через запятую</h2>
         <input class="data__field data__input-field_columns_1" type="text" id="choose-income">

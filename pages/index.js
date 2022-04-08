@@ -59,6 +59,8 @@ const popup = new PopupWithForm({
     year.value = new Date(Date.parse(time)).getFullYear();
     month.value = new Date(Date.parse(time)).getMonth() + 1;
     day.value = new Date(Date.parse(time)).getDate();
+    countBtn.classList.remove(dataFormClasses.inactiveButtonClass);
+    countBtn.disabled = false;
     popup.closePopup();
   }
 });
@@ -184,7 +186,3 @@ function enableValidation(formClasses) {
 // Включение валидации форм
 enableValidation(popupFormClasses);
 enableValidation(dataFormClasses);
-
-
-// Деактивация кнопок форм
-formValidators.expensesForm.resetValidation();

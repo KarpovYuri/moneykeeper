@@ -32,7 +32,7 @@
 
 .app {
   background-color: #faf8f5;
-  min-height: 920px;
+  min-height: 950px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -70,7 +70,6 @@
   -ms-grid-columns: 57% 1fr;
       grid-template-columns: 57% 1fr;
   margin: 0 auto;
-  padding-top: 15px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -100,7 +99,7 @@
 }
 
 .data__subtitle {
-  margin: 25px 0 30px;
+  margin: 40px 0 15px;
   font-weight: 500;
   font-size: 14px;
   color: #262626;
@@ -118,6 +117,16 @@
 
 @media screen and (max-width: 524px) {
   .data__input-wrapper {
+    width: 90%;
+  }
+}
+
+.data__input-wrapper_columns_3 {
+  width: calc((100%/3) - 4px);
+}
+
+@media screen and (max-width: 524px) {
+  .data__input-wrapper_columns_3 {
     width: 90%;
   }
 }
@@ -153,16 +162,6 @@
 
 .data__field::placeholder {
   opacity: .4;
-}
-
-.data__field_columns_3 {
-  width: calc((100%/3) - 4px);
-}
-
-@media screen and (max-width: 524px) {
-  .data__field_columns_3 {
-    width: 90%;
-  }
 }
 
 .data__field_columns_2 {
@@ -212,6 +211,16 @@
   min-height: 28px;
   width: 90%;
   margin: 0 auto 4px;
+}
+
+.data__input-error_columns_3 {
+  min-height: 38px;
+}
+
+@media screen and (max-width: 524px) {
+  .data__input-error_columns_3 {
+    min-height: 28px;
+  }
 }
 
 .data__input-error_active {
@@ -376,7 +385,7 @@
           box-sizing: border-box;
   width: 56%;
   margin: 10px 0 0;
-  min-height: 40px;
+  min-height: 55px;
   padding: 10px;
 }
 
