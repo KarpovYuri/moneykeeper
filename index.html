@@ -28,7 +28,7 @@
 
           <div class="data__input-wrapper">
             <input class="data__field expenses-item" type="number" id="priceOneInput" name="priceOne"
-              placeholder="Сумма" required min="100" max="10000" step="100" autocomplete="off">
+              placeholder="Сумма" required min="1000" max="100000" step="1000" autocomplete="off">
             <span class="data__input-error priceOneInput-error"></span>
           </div>
 
@@ -40,7 +40,7 @@
 
           <div class="data__input-wrapper">
             <input class="data__field expenses-item" type="number" id="priceTwoInput" name="priceTwo"
-              placeholder="Сумма" required min="100" max="10000" step="100" autocomplete="off">
+              placeholder="Сумма" required min="1000" max="100000" step="1000" autocomplete="off">
             <span class="data__input-error priceTwoInput-error"></span>
           </div>
 
@@ -53,19 +53,19 @@
         <form class="data__form" name="optionalExpensesForm" novalidate>
           <div class="data__input-wrapper data__input-wrapper_columns_3">
             <input class="data__field additional-item" type="text" id="optionalExpensesOneInput"
-              name="optionalExpensesOne" placeholder="Наименование" required minlength="2" maxlength="20"
+              name="optionalExpensesOne" placeholder="Наименование" required minlength="2" maxlength="19"
               autocomplete="off">
             <span class="data__input-error data__input-error_columns_3 optionalExpensesOneInput-error"></span>
           </div>
           <div class="data__input-wrapper data__input-wrapper_columns_3">
             <input class="data__field additional-item" type="text" id="optionalExpensesTwoInput"
-              name="optionalExpensesTwo" placeholder="Наименование" required minlength="2" maxlength="20"
+              name="optionalExpensesTwo" placeholder="Наименование" required minlength="2" maxlength="19"
               autocomplete="off">
             <span class="data__input-error data__input-error_columns_3 optionalExpensesTwoInput-error"></span>
           </div>
           <div class="data__input-wrapper data__input-wrapper_columns_3">
             <input class="data__field additional-item" type="text" id="optionalExpensesThreeInput"
-              name="optionalExpensesThree" placeholder="Наименование" required minlength="2" maxlength="20"
+              name="optionalExpensesThree" placeholder="Наименование" required minlength="2" maxlength="19"
               autocomplete="off">
             <span class="data__input-error data__input-error_columns_3 optionalExpensesThreeInput-error"></span>
           </div>
@@ -78,13 +78,15 @@
           disabled>Рассчитать</button>
 
         <h2 class="data__subtitle">Введите статьи возможного дохода через запятую</h2>
-        <input class="data__field data__input-field_columns_1" type="text" id="choose-income">
+        <input class="data__field data__field_columns_1" type="text" id="choose-income" required maxlength="75"
+          autocomplete="off">
 
         <input class="data__checkbox" id="savings" type="checkbox" />
         <label class="data__label" for="savings">Есть ли накопления:</label>
 
-        <input class="data__field data__field_columns_2" id="sum" type="text" placeholder="Сумма">
-        <input class="data__field data__field_columns_2" id="percent" type="text" placeholder="Процент">
+        <input class="data__field data__field_columns_2" id="sum" type="text" placeholder="Сумма" autocomplete="off">
+        <input class="data__field data__field_columns_2" id="percent" type="text" placeholder="Процент"
+          autocomplete="off">
 
         <button type="button" class="data__submit-button data__submit-button_width_200" id="start">Начать
           расчет</button>
@@ -142,7 +144,7 @@
           required pattern="\d{4}-\d{2}-\d{2}">
         <span class="popup__input-error dateInput-error"></span>
         <input type="number" placeholder="Бюджет на месяц?" class="popup__field" id="budgetInput" name="budget" required
-          min="1000" max="100000" step="500">
+          min="1000" max="1000000" step="1000">
         <span class="popup__input-error budgetInput-error"></span>
         <button type="submit" aria-label="Кнопка сохранения формы" class="popup__submit-button">Сохранить</button>
       </form>
