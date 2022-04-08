@@ -2,24 +2,24 @@ $active: #ff6a30
 $text-color: #262626
 $result: #61a654
 
-@mixin input-field
+@mixin field
   height: 35px
-  width: calc((100%/2) - 4px)
   border-radius: 2.5px
   background-color: #fff
-  box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, .1)
+  box-shadow: 0px 2.5px 10px 0 #0a08691a
   border: none
   padding: 0 0 0 10px
-  margin-bottom: 10px
+  margin-bottom: 4px
   font-size: 14px
   color: #a7a7a7
   outline: none
   box-sizing: border-box
+  width: 100%
 @mixin button
   width: 90px
   height: 30px
   display: block
-  margin: 5px auto
+  margin: 0 auto
   padding: 0
   border: none
   border-radius: 2.5px
@@ -30,3 +30,10 @@ $result: #61a654
   font-size: 12px
   cursor: pointer
   outline: none
+@mixin button_inactive
+  pointer-events: none
+  background-color: #eee
+  background-image: none
+  border: 1px solid #555
+  color: #000
+  opacity: .35

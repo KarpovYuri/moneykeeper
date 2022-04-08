@@ -53,9 +53,9 @@
     position: relative
     outline: none
     &_type_error
-      border-bottom: 1px solid #f00
+      border-bottom: 1px solid $active
   &__input-error
-    color: #f00
+    color: $active
     font-size: 12px
     font-weight: normal
     display: block
@@ -85,12 +85,7 @@
       font-size: 14px
       line-height: 17px
     &_inactive
-      pointer-events: none
-      background-color: #ccc
-      background-image: none
-      border: 1px solid #000
-      color: #000
-      opacity: .2
+      @include button_inactive
   &__close-button
     width: 32px
     height: 32px

@@ -32,7 +32,9 @@
 
 .app {
   background-color: #faf8f5;
-  min-height: 820px;
+  min-height: 920px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .app__logo {
@@ -63,26 +65,26 @@
 
 .app__container {
   max-width: 1140px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 57% 1fr;
+      grid-template-columns: 57% 1fr;
   margin: 0 auto;
   padding-top: 15px;
 }
 
 @media screen and (max-width: 1023px) {
   .app__container {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
 .data {
   text-align: center;
   padding: 0 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media screen and (max-width: 767px) {
@@ -98,95 +100,129 @@
 }
 
 .data__subtitle {
-  margin: 25px 0 15px;
+  margin: 25px 0 30px;
   font-weight: 500;
   font-size: 14px;
   color: #262626;
 }
 
-.data__input-field {
+.data__input-wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc((100%/2) - 3px);
+  margin-right: 1px;
+}
+
+@media screen and (max-width: 524px) {
+  .data__input-wrapper {
+    width: 90%;
+  }
+}
+
+.data__field {
   height: 35px;
-  width: calc((100%/2) - 4px);
   border-radius: 2.5px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
-          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  -webkit-box-shadow: 0px 2.5px 10px 0 #0a08691a;
+          box-shadow: 0px 2.5px 10px 0 #0a08691a;
   border: none;
   padding: 0 0 0 10px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   font-size: 14px;
   color: #a7a7a7;
   outline: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
 }
 
-.data__input-field::-webkit-input-placeholder {
+.data__field::-webkit-input-placeholder {
   opacity: .4;
 }
 
-.data__input-field:-ms-input-placeholder {
+.data__field:-ms-input-placeholder {
   opacity: .4;
 }
 
-.data__input-field::-ms-input-placeholder {
+.data__field::-ms-input-placeholder {
   opacity: .4;
 }
 
-.data__input-field::placeholder {
+.data__field::placeholder {
   opacity: .4;
 }
 
-@media screen and (max-width: 524px) {
-  .data__input-field {
-    width: 90%;
-  }
-}
-
-.data__input-field_columns_3 {
+.data__field_columns_3 {
   width: calc((100%/3) - 4px);
 }
 
 @media screen and (max-width: 524px) {
-  .data__input-field_columns_3 {
+  .data__field_columns_3 {
     width: 90%;
   }
 }
 
-.data__input-field_columns_2 {
+.data__field_columns_2 {
   width: 30%;
 }
 
 @media screen and (max-width: 524px) {
-  .data__input-field_columns_2 {
+  .data__field_columns_2 {
     width: 40%;
   }
 }
 
-.data__input-field_columns_1 {
+.data__field_columns_1 {
   width: 80%;
   margin: 0 auto;
 }
 
 @media screen and (max-width: 524px) {
-  .data__input-field_columns_1 {
+  .data__field_columns_1 {
     width: 90%;
   }
 }
 
-.data__input-field:hover {
+.data__field:hover {
   outline: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.data__input-field:focus {
+.data__field:focus {
   outline: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-.data__btn {
+.data__field_type_error {
+  border: 1px solid #ff6a30;
+}
+
+.data__field_type_error:focus {
+  outline: none;
+}
+
+.data__input-error {
+  color: #ff6a30;
+  font-size: 11px;
+  font-weight: normal;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  min-height: 28px;
+  width: 90%;
+  margin: 0 auto 4px;
+}
+
+.data__input-error_active {
+  opacity: 1;
+}
+
+.data__submit-button {
   width: 90px;
   height: 30px;
   display: block;
-  margin: 5px auto;
+  margin: 0 auto;
   padding: 0;
   border: none;
   border-radius: 2.5px;
@@ -200,11 +236,11 @@
   outline: none;
 }
 
-.data__btn_width_120 {
+.data__submit-button_width_120 {
   width: 120px;
 }
 
-.data__btn_width_200 {
+.data__submit-button_width_200 {
   width: 200px;
   height: 45px;
   margin-top: 25px;
@@ -212,14 +248,23 @@
   font-weight: 500;
 }
 
-.data__btn:hover {
+.data__submit-button:hover {
   background-image: none;
   background-color: #ff964b;
 }
 
-.data__btn:active {
+.data__submit-button:active {
   -webkit-box-shadow: 0 0 0 60px rgba(0, 0, 0, 0.05) inset;
           box-shadow: 0 0 0 60px rgba(0, 0, 0, 0.05) inset;
+}
+
+.data__submit-button_inactive {
+  pointer-events: none;
+  background-color: #eee;
+  background-image: none;
+  border: 1px solid #555;
+  color: #000;
+  opacity: .35;
 }
 
 .data__label {
@@ -267,8 +312,9 @@
 }
 
 .result {
-  width: 60%;
   padding-right: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 @media screen and (max-width: 1023px) {
@@ -302,9 +348,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
   min-height: 400px;
-  margin: 56px 0 0;
+  margin: 71px 0 0;
   padding: 25px 20px;
   background-color: #fff;
   -webkit-box-shadow: 0px 1.5px 20px 0 rgba(1, 0, 42, 0.1);
@@ -367,7 +412,6 @@
 }
 
 .time-data {
-  width: 100%;
   margin: 41px 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -422,19 +466,19 @@
 
 .time-data__value {
   height: 35px;
-  width: calc((100%/2) - 4px);
   border-radius: 2.5px;
   background-color: #fff;
-  -webkit-box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
-          box-shadow: 0px 2.5px 10px 0 rgba(1, 0, 42, 0.1);
+  -webkit-box-shadow: 0px 2.5px 10px 0 #0a08691a;
+          box-shadow: 0px 2.5px 10px 0 #0a08691a;
   border: none;
   padding: 0 0 0 10px;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
   font-size: 14px;
   color: #a7a7a7;
   outline: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
   width: 80px;
   height: 30px;
   margin-bottom: 0;
@@ -531,11 +575,11 @@
 }
 
 .popup__field_type_error {
-  border-bottom: 1px solid #f00;
+  border-bottom: 1px solid #ff6a30;
 }
 
 .popup__input-error {
-  color: #f00;
+  color: #ff6a30;
   font-size: 12px;
   font-weight: normal;
   display: block;
@@ -554,7 +598,7 @@
   width: 90px;
   height: 30px;
   display: block;
-  margin: 5px auto;
+  margin: 0 auto;
   padding: 0;
   border: none;
   border-radius: 2.5px;
@@ -596,11 +640,11 @@
 
 .popup__submit-button_inactive {
   pointer-events: none;
-  background-color: #ccc;
+  background-color: #eee;
   background-image: none;
-  border: 1px solid #000;
+  border: 1px solid #555;
   color: #000;
-  opacity: .2;
+  opacity: .35;
 }
 
 .popup__close-button {

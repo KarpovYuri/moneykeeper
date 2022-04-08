@@ -1,5 +1,5 @@
-// Объект классов необходимый для запуса валидации
-export const formClasses = {
+// Объект классов для запуса валидации формы popup'а
+export const popupFormClasses = {
   formSelector: '.popup__form',
   inputSelector: '.popup__field',
   submitButtonSelector: '.popup__submit-button',
@@ -9,15 +9,26 @@ export const formClasses = {
 };
 
 
+// Объект классов для запуса валидации форм data
+export const dataFormClasses = {
+  formSelector: '.data__form',
+  inputSelector: '.data__field',
+  submitButtonSelector: '.data__submit-button',
+  inactiveButtonClass: 'data__submit-button_inactive',
+  inputErrorClass: 'data__field_type_error',
+  errorClass: 'data__input-error_active',
+};
+
+
 // Объект экземпляров класса FormValidator
 export const formValidators = {};
 
 
 // Выбор кнопок
 const startBtn = document.querySelector('#start');
-const expensesBtn = document.querySelectorAll('.data__btn')[0];
-const additionalExpensesBtn = document.querySelectorAll('.data__btn')[1];
-const countBtn = document.querySelectorAll('.data__btn')[2];
+const expensesBtn = document.querySelectorAll('.data__submit-button')[0];
+const additionalExpensesBtn = document.querySelectorAll('.data__submit-button')[1];
+const countBtn = document.querySelectorAll('.data__submit-button')[2];
 
 
 // Выбор полей результатов

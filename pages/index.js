@@ -20,7 +20,8 @@ const appData = {
 
 // Импорт переменных
 import {
-  formClasses,
+  popupFormClasses,
+  dataFormClasses,
   formValidators,
   startBtn,
   expensesBtn,
@@ -46,12 +47,6 @@ import {
 } from '../js/utils/constants.js';
 
 
-// Переключение кнопок в состояние disabled
-expensesBtn.disabled = true;
-additionalExpensesBtn.disabled = true;
-countBtn.disabled = true;
-
-
 // Создание эксземпляра класса popup'а
 const popup = new PopupWithForm({
   popupSelector: '#popup-data',
@@ -64,13 +59,9 @@ const popup = new PopupWithForm({
     year.value = new Date(Date.parse(time)).getFullYear();
     month.value = new Date(Date.parse(time)).getMonth() + 1;
     day.value = new Date(Date.parse(time)).getDate();
-    expensesBtn.disabled = false;
-    additionalExpensesBtn.disabled = false;
-    countBtn.disabled = false;
     popup.closePopup();
   }
-}
-);
+});
 
 
 // Установка обработчика событий крестику, оверлею и кнопке submit popap'а
@@ -190,5 +181,10 @@ function enableValidation(formClasses) {
 }
 
 
-// Включение валидации
-enableValidation(formClasses);
+// Включение валидации форм
+enableValidation(popupFormClasses);
+enableValidation(dataFormClasses);
+
+
+// Деактивация кнопок форм
+formValidators.expensesForm.resetValidation();
