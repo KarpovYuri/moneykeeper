@@ -18,4 +18,4 @@
 + Git
 + Адаптация
 
-* [ссылка на GitHub Pages](https://yurick78.github.io/moneykeeper/index.html)
+* [ссылка на GitHub Pages](https://KarpovYuri.github.io/moneykeeper/index.html)
